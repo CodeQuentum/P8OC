@@ -1,0 +1,64 @@
+[
+	{
+	  "id": 1,
+	  "title": "Booki",
+	  "cover": "https://images.pexels.com/photos/270632/pexels-photo-270632.jpeg?auto=compress&cs=tinysrgb&w=1600",
+	  "pictures": [
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-2.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-3.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-4.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-5.jpg"
+	  ],
+	  "description": "Projet réalisé pendant la formation avec Openclassrooms. Le but de se projet était de réaliser la page d'accueil d'une agence de voyage en utilisant exclusivement le HTML et le CSS. Le but etant de d'apprendre les bases deux ces deux langages etant la base de l'internet d'aujourd'hui.",
+	  "tags": ["HTML", "CSS"],
+	  "repo":"https://github.com/CodeQuentum/booki",
+	  "figma": "https://www.figma.com/file/r9YJyUkpVdrxzBBKGH7reY/Maquettes-Booki-(desktop%2C-mobile%2C-tablette)?type=design&node-id=3-0&mode=design&t=G5VI7cVybRPxQSOU-0"
+	  
+	},
+	{
+	  "id": 2,
+	  "title": "Magnifique appartement proche Canal Saint Martin",
+	  "cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg",
+	  "pictures": [
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-2.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-3.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-4.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-5.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-6.jpg"
+	  ],
+	  "description": "Profitez du charme de la vie parisienne dans un magnifique appartement. À 3 minutes à pied du Canal Saint Martin, vous serez proche des transports, mais également de nombreux commerces. L'appartement est tout équipé et possède également un parking pour ceux qui souhaitent se déplacer en voiture.",
+	  "tags": ["Canal Saint Martin", "République", "Appartement"]
+	},
+	{
+	  "id": 3,
+	  "title": "Appartement chic au cœur de Paris",
+	  "cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-1.jpg",
+	  "pictures": [
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-1.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-2.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-3.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-4.jpg",
+		"https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-5.jpg"
+	  ],
+	  "description": "Vivez l'élégance parisienne dans cet appartement chic situé au cœur de Paris. Vous serez entouré de boutiques, de cafés et de la culture parisienne. L'appartement offre une vue imprenable sur la Tour Eiffel et est idéal pour les couples en quête d'une expérience romantique.",
+	  "tags": ["JavaScript", "React", "Html","CSS"]
+	},
+	
+	{
+		"id": 4,
+		"title": "Appartement chic au cœur de Paris",
+		"cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-1.jpg",
+		"pictures": [
+		  "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-1.jpg",
+		  "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-2.jpg",
+		  "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-3.jpg",
+		  "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-4.jpg",
+		  "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-3-5.jpg"
+		],
+		"description": "Vivez l'élégance parisienne dans cet appartement chic situé au cœur de Paris. Vous serez entouré de boutiques, de cafés et de la culture parisienne. L'appartement offre une vue imprenable sur la Tour Eiffel et est idéal pour les couples en quête d'une expérience romantique.",
+		"tags": ["Tour Eiffel", "Champs-Élysées", "Chic"]
+	  }
+  ]
+  

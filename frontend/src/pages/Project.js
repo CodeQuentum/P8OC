@@ -1,38 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import NotFound from './NotFound';
 import ReturnButton from '../components/returnButton';
-
 import '../styles/Project.css';
+import projetsData from '../data/projects.json';
 
 function Project() {
-  const { _id } = useParams(); // Utilisez _id au lieu de id
-  console.log('ID extrait des paramètres de l\'URL:', _id);
+  const { id } = useParams(); 
+  console.log('ID extrait des paramètres de l\'URL:', id);
 
   const [project, setProject] = useState({
     pictures: [],
     tags: [],
-    title: '', 
+    title: '',
     description: '',
   });
 
   useEffect(() => {
-    console.log('Effect déclenché avec l\'ID:', _id);
-    axios.get(`http://localhost:4000/api/projects/${_id}`)
-      .then((response) => {
-        console.log('Réponse du serveur:', response.data);
-        setProject(response.data);
-      })
-      .catch((error) => {
-        console.error('Erreur lors de la récupération du projet:', error);
-        setProject(null); 
-      });
-  }, [_id]);
+    console.log('Effect déclenché avec l\'ID:', id);
+
+    const projectData = projetsData.find((project) => project.id === id);
+
+    if (projectData) {
+      console.log('Données du projet trouvées:', projectData);
+      setProject(projectData);
+    } else {
+      console.error('Projet non trouvé');
+      setProject(null);
+    }
+  }, [id]);
 
   if (!project) {
     return <NotFound />;

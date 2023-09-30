@@ -1,44 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import '../styles/ProjectsGallery.css';
+import projetsData from '../data/projects.json';
 
 function ProjectGallery() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('http://localhost:4000/api/projects')
-      .then((response) => {
-        setProjects(response.data);
-      })
-      .catch((error) => {
-        console.error('Erreur lors de la récupération des projets :', error);
-      });
+    setProjects(projetsData);
   }, []);
 
   return (
     <section id='mes-projets'>
       <div className="project-gallery">
         <h2>Mes projets</h2>
-        <div className='gallery'>
+        <ul className='gallery'>
           {projects.map((project) => (
-            <Link
-              key={project.id}
-              to={`/projet/${project.id}`}
-              className="project-card"
-            >
-              <h3>{project.title}</h3>
-              <div className="tags">
-                {project.tags.map((tag, index) => (
-                  <span key={index} className="tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </Link>
+            <li key={project.id}>
+              <Link to={`/projet/${project.id}`}>
+                <img src={project.cover} alt={project.title} />
+                <p>{project.title}</p>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
