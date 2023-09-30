@@ -1,0 +1,22 @@
+.login-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-content form{
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-content .logItem{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-content button{
+    margin-top: 10px;
+}

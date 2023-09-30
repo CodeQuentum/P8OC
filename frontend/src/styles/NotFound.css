@@ -1,0 +1,20 @@
+.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.notFound h2{
+    font-size:9.375rem;/*150px*/;
+    color: #3883b8;
+}
+
+.notFound p{
+    font-size: 3.125rem;/*50px*/
+}
+@media (max-width: 768px){
+    .notFound p{
+        font-size: 1.563rem;/*25px*/
+    }
+}

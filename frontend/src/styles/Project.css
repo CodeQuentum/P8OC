@@ -1,0 +1,95 @@
+.project-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .project-slide img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  .project-title {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  .project-description {
+    font-size: 1.2rem;
+    margin: 20px 0;
+  }
+
+  .project-tags-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  .project-tag {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #5883B8; 
+    color: #fff; 
+    border: 3px solid darkblue; 
+    border-radius: 35px;
+    font-family: 'Raleway';
+  }
+
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+
+  .slick-dots {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .slick-dots li button {
+    font-size: 1.5rem;
+    color: #999;
+    border: 2px solid #999;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+
+  .slick-dots li.slick-active button {
+    color: #5883B8;
+    background-color: #5883B8;
+    border: 2px solid #5883B8;
+  }  
+  @media (max-width: 768px){
+    .project-title {
+      font-size: 1.5rem;
+      margin-top: 20px;
+    }
+    .project-description {
+      font-size: 1rem;
+      margin: 20px 0;
+    }
+    .project-tag {
+      display: inline-block;
+      font-size: 1rem;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      background-color: #5883B8; 
+      color: #fff; 
+      border: 3px solid darkblue; 
+      border-radius: 35px;
+      font-family: 'Raleway';
+    }
+  }

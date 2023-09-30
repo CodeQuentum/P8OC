@@ -1,0 +1,69 @@
+#mes-competences{
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100vh; 
+   background-color: #EBEDEF;
+   text-align: center;
+ }
+ #mes-competences h2{
+   font-size: 3rem;
+ }
+ #mes-competences p{
+   margin-top: 0;
+ }
+ .competence-list{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+ }
+ 
+ .competence-card {
+   max-width: 19.5rem;/*312px*/
+   height: 9.375rem;/*150px*/
+   background-color: #fff;
+   border: 1px solid #eaeaea;
+   border-radius: 8px;
+   padding: 20px;
+   margin: 10px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease-in-out;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   flex: 1;
+   overflow-y: auto;
+ }
+ .competence-card:hover {
+     transform: translateY(-5px);
+   }
+ .star-icons {
+   display: flex;
+   gap: 4px;
+   color : gold;
+   margin-top: auto; 
+ }
+ 
+ .star-icon.empty-star {
+   color: #ccc;
+ }
+ 
+ @media (max-width: 768px) {
+   #mes-competences{
+    height: 120vh; 
+  }
+  #mes-competences h2{
+   font-size: 2rem;
+   margin-bottom: 2rem;
+ }
+   .competence-card {
+     width: 19.5rem;/*312px*/
+     height: 9.375rem;/*150px*/
+   }
+   .competence-list{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+ }
+ }

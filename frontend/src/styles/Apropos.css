@@ -1,0 +1,29 @@
+.apropos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    background-color: #c6d0de;
+    text-align: center;
+  }
+  
+    .introComponent h2{
+      font-size: 3rem;
+    }
+  
+    .introComponent p{
+      font-size: 1.5rem;
+      max-width: 77.5rem; /*1240px*/
+    }
+  
+    @media (max-width: 768px) {
+      .introComponent h2{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+      .introComponent p{
+        font-size: 1rem;
+        max-width: 77.5rem; /*1240px*/
+      }
+    }
