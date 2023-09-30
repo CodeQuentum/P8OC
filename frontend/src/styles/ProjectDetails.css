@@ -2,20 +2,48 @@
     background-color: #c6d0de;
     height: 100vh;
   }
-  
   .projet-detail:nth-child(odd) {
     background-color: #EBEDEF;
     height: 100vh;
   }
-  
   .projet-detail {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    height: 100vh; 
     text-align: center;
   }
-  
   .projet-detail h2 {
     font-size: 3rem;
   }
-  
+  .projet-detail p{
+    font-size: 1.5rem;
+    max-width: 77.5rem; /*1240px*/
+  }
+  .projet-detail .tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 20px; 
+  }
+  .projet-detail .tags span {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 10px 15px; 
+    border-radius: 20px; 
+    font-size: 1.5rem;
+  }
+  .projet-detail .liens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center; 
+    align-items: flex-end;
+    width: 28.125rem;/* 450px */
+  }
+  .projet-detail .liens a svg {
+    font-size: 2rem;
+    margin-top: 3.125rem;
+    color: black;
+  }  

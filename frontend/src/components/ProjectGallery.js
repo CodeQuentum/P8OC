@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import '../styles/ProjectsGallery.css';
 import projetsData from '../data/projects.json';
 
@@ -10,6 +9,16 @@ function ProjectGallery() {
     setProjects(projetsData);
   }, []);
 
+  const scrollToSection = (sectionId) => {
+    const targetElement = document.getElementById(sectionId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <section id='mes-projets'>
       <div className="project-gallery">
@@ -17,10 +26,10 @@ function ProjectGallery() {
         <ul className='gallery'>
           {projects.map((project) => (
             <li key={project.id}>
-              <Link to={`/projet/${project.id}`}>
+              <a href={`#project-${project.id}`} onClick={() => scrollToSection(`project-${project.id}`)}>
                 <img src={project.cover} alt={project.title} />
                 <p>{project.title}</p>
-              </Link>
+              </a>
             </li>
           ))}
         </ul>

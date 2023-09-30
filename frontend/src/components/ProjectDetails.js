@@ -8,7 +8,7 @@ const ProjectDetail = () => {
   return (
     <div>
       {projetData.map((projet, index) => (
-        <div className="projet-detail" key={index}>
+        <div className="projet-detail" id={`project-${projet.id}`} key={index}>
           <h2>{projet.title}</h2>
           <p>{projet.description}</p>
           <div className="tags">

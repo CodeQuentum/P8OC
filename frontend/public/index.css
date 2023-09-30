@@ -9,9 +9,21 @@ h1{
 }
 
 h2{
-  font-family: 'Raleway';
+  font-family: 'Montserrat';
+}
+
+h3{
+  font-family: 'Montserrat';
 }
 
 p{
+  font-family: 'Raleway';
+}
+
+button{
+  font-family: 'Raleway';
+}
+
+span{
   font-family: 'Raleway';
 }
