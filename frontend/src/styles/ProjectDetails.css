@@ -1,10 +1,8 @@
 .projet-detail:nth-child(even) {
     background-color: #c6d0de;
-    height: 100vh;
   }
   .projet-detail:nth-child(odd) {
     background-color: #EBEDEF;
-    height: 100vh;
   }
   .projet-detail {
     display: flex;

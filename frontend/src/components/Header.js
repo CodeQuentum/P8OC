@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../assets/logo-header.png';
+import ScrollToSection from './ScrollToSection'; 
 import '../styles/Header.css';
 
 function Header() {
   const [activeSection, setActiveSection] = useState('a-propos');
-
-  const scrollToSection = (sectionId) => {
-    const targetElement = document.getElementById(sectionId);
-
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-      });
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,36 +39,40 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <button
-              className={`headerButton ${activeSection === 'a-propos' ? 'active-button' : ''}`}
-              onClick={() => scrollToSection('a-propos')}
-            >
-              A propos
-            </button>
+            <ScrollToSection sectionId="a-propos"> 
+              <button
+                className={`headerButton ${activeSection === 'a-propos' ? 'active-button' : ''}`}
+              >
+                A propos
+              </button>
+            </ScrollToSection>
           </li>
           <li>
-            <button
-              className={`headerButton ${activeSection === 'mes-competences' ? 'active-button' : ''}`}
-              onClick={() => scrollToSection('mes-competences')}
-            >
-              Compétences
-            </button>
+            <ScrollToSection sectionId="mes-competences"> 
+              <button
+                className={`headerButton ${activeSection === 'mes-competences' ? 'active-button' : ''}`}
+              >
+                Compétences
+              </button>
+            </ScrollToSection>
           </li>
           <li>
-            <button
-              className={`headerButton ${activeSection === 'mes-projets' ? 'active-button' : ''}`}
-              onClick={() => scrollToSection('mes-projets')}
-            >
-              Mes projets
-            </button>
+            <ScrollToSection sectionId="mes-projets"> 
+              <button
+                className={`headerButton ${activeSection === 'mes-projets' ? 'active-button' : ''}`}
+              >
+                Mes projets
+              </button>
+            </ScrollToSection>
           </li>
           <li>
-            <button
-              className={`headerButton ${activeSection === 'contact' ? 'active-button' : ''}`}
-              onClick={() => scrollToSection('contact')}
-            >
-              Contact
-            </button>
+            <ScrollToSection sectionId="contact">
+              <button
+                className={`headerButton ${activeSection === 'contact' ? 'active-button' : ''}`}
+              >
+                Contact
+              </button>
+            </ScrollToSection>
           </li>
         </ul>
       </nav>

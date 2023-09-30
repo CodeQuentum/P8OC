@@ -23,7 +23,7 @@ function Competences() {
     {
       titre: "Backend",
       description:"Capacité à gérer le backend d'un site web en créant un serveur NodeJS.",
-      niveau: 4,
+      niveau: 3,
     },
   ];
 
