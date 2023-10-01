@@ -12,6 +12,31 @@
   font-size: 3rem;
   margin-bottom: 1rem;
 }
+.project-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.project-buttons button {
+  background-color: #3883b8;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 1rem;
+  margin: 0 10px;
+  border: none;
+}
+
+.project-buttons button.active {
+  background-color: #0a3143; 
+  color: #ffffff; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-3px);
+}
 
 .gallery {
   display: grid;
@@ -23,56 +48,19 @@
   padding: 0;
 }
 
-.gallery a {
-  scroll-behavior: smooth;
-}
-
-.project-gallery li {
-  width: 17.5rem; /*280px*/
-  max-width: 100%;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
-.project-gallery li img {
-  width: 100%;
-  height: 17.5rem; /*280px*/
-  object-fit: cover;
-}
-
-.project-gallery li::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
-  top: 0;
-  left: 0;
-  opacity: 0.7;
-}
-
-.project-gallery li p {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  padding: 5px 0;
-}
-
 @media (max-width: 768px) {
   .project-gallery {
-    height: 170vh; 
+    height: 100vh; 
   }
   .project-gallery h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
-  .gallery {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
+  .project-buttons button{
+    padding: 5px 7px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin: 0 10px;
+    border: none;
   }
 }

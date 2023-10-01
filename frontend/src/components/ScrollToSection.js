@@ -8,7 +8,6 @@ const ScrollToSection = ({ sectionId, children }) => {
       targetElement.scrollIntoView({
         behavior: 'smooth',
       });
-      console.log(`Scrolling to section with ID: ${sectionId}`);
     } else {
       console.log(`Section with ID ${sectionId} not found.`);
     }

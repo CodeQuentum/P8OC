@@ -5,7 +5,7 @@ import ProjectDetail from './ProjectDetails';
 
 function ProjectGallery() {
   const [projects] = useState(projetsData);
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(projects[0]); // Définit le premier projet comme projet sélectionné par défaut
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
@@ -17,7 +17,11 @@ function ProjectGallery() {
         <h2>Mes projets</h2>
         <div className="project-buttons">
           {projects.map((project) => (
-            <button key={project.id} onClick={() => handleProjectClick(project)}>
+            <button
+              key={project.id}
+              onClick={() => handleProjectClick(project)}
+              className={selectedProject.id === project.id ? 'active' : ''}
+            >
               {project.title}
             </button>
           ))}
