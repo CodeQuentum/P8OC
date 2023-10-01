@@ -1,6 +1,5 @@
 import React from 'react';
 import ProjectGallery from './ProjectGallery';
-import ContactForm from './ContactForm';
 import Apropos from './Apropos';
 import Competences from './Competences';
 
@@ -11,7 +10,6 @@ function HomeContent(){
             <Apropos />
             <Competences />
             <ProjectGallery />
-            <ContactForm />
         </div>
     );
 }

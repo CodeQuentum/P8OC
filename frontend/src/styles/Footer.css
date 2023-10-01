@@ -14,8 +14,8 @@ body {
     background-color: #000000;
     color: #ffffff;
     text-align: center;
-    justify-content: center;
-    height: 100px;
+    justify-content:space-between;
+    height: 150px;
     display: flex;
     align-items: center;
   }
@@ -23,6 +23,23 @@ body {
     width: 4.688rem;
     height: 4.688rem;/*75px*/
   }
+  .contactFooter{
+    display: flex;
+    flex-direction: column;
+    margin-right: 150px;
+  }
+  .contactFooter p {
+    font-size: 1.5rem;
+  }
+  .lienFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .lienFooter svg{
+    font-size: 1.8rem;
+    color: #ffffff;
+  }  
   @media (max-width: 768px){
     footer img{
       width: 2.813rem;
