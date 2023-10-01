@@ -23,6 +23,10 @@
   padding: 0;
 }
 
+.gallery a {
+  scroll-behavior: smooth;
+}
+
 .project-gallery li {
   width: 17.5rem; /*280px*/
   max-width: 100%;

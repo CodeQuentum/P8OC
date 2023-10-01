@@ -1,31 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/ProjectsGallery.css';
 import projetsData from '../data/projects.json';
-import ScrollToSection from './ScrollToSection';
+import ProjectDetail from './ProjectDetails'; 
 
 function ProjectGallery() {
-  const [projects, setProjects] = useState([]);
+  const [projects] = useState(projetsData);
+  const [selectedProject, setSelectedProject] = useState(null);
 
-  useEffect(() => {
-    setProjects(projetsData);
-  }, []);
+  const handleProjectClick = (project) => {
+    setSelectedProject(project);
+  };
 
   return (
     <section id='mes-projets'>
       <div className="project-gallery">
         <h2>Mes projets</h2>
-        <ul className='gallery'>
+        <div className="project-buttons">
           {projects.map((project) => (
-            <li key={project.id}>
-              <ScrollToSection sectionId={`project-${project.id}`}>
-                <a href={`#project-${project.id}`}>
-                  <img src={project.cover} alt={project.title} />
-                  <p>{project.title}</p>
-                </a>
-              </ScrollToSection>
-            </li>
+            <button key={project.id} onClick={() => handleProjectClick(project)}>
+              {project.title}
+            </button>
           ))}
-        </ul>
+        </div>
+        <div className="project-details">
+          {selectedProject && <ProjectDetail project={selectedProject} />}
+        </div>
       </div>
     </section>
   );
