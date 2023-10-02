@@ -22,7 +22,7 @@
 	  "id": 3,
 	  "title": "Kasa",
 	  "cover": "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=1600",
-	  "description": "Encore un projet réalisé lors de ma formation chez Openclassrooms. Cette fois, on y est, REACT ! Les choses sérieuses commencent enfin, c'est lors de ce projet que j'ai pu réaliser l'importance des projets précèdent même si les manières de faire ne sont plus vraiment d'actualité. Et c'est aussi le premier projet pour lequel je n'avais aucune de base de code fournie. Partir d'un éditeur de code tout vide peut parfois faire un peu peur, mais c'est d'autant plus satisfaisant de voir la maquette prendre vie au fur et à mesure.",
+	  "description": "Encore un projet réalisé lors de ma formation chez Openclassrooms. Cette fois, on y est, REACT ! Les choses sérieuses commencent enfin, c'est lors de ce projet que j'ai pu réaliser l'importance des projets précèdent même si les manières de faire ne sont plus vraiment d'actualité. Et c'est aussi le premier projet pour lequel je n'avais aucune base de code fournie. Partir d'un éditeur de code tout vide peut parfois faire un peu peur, mais c'est d'autant plus satisfaisant de voir la maquette prendre vie au fur et à mesure.",
 	  "tags": ["JavaScript", "ReactJS", "Html","SASS"],
 	  "repo":"https://github.com/CodeQuentum/OCP6",
 	  "figma": "https://www.figma.com/file/qEno0LwL4ZLkWyeY59kxp1/UI-Design-Kasa-FR?type=design&node-id=3-0&mode=design&t=M6as8lpIgSUtGUDA-0"
