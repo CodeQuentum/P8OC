@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Intro.css';
-import backgroundImg from '../assets/background-intro.jpeg'; 
+import backgroundImg from '../assets/background-intro.avif'; 
 
 
 function Intro() {
