@@ -14,7 +14,7 @@ body {
     background-color: #000000;
     color: #ffffff;
     text-align: center;
-    justify-content:space-between;
+    justify-content:space-around;
     height: 150px;
     display: flex;
     align-items: center;
@@ -26,7 +26,7 @@ body {
   .contactFooter{
     display: flex;
     flex-direction: column;
-    margin-right: 150px;
+    justify-content: center;
   }
   .contactFooter p {
     font-size: 1.5rem;
@@ -35,6 +35,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 22px;
   }
   .lienFooter svg{
     font-size: 1.8rem;
@@ -46,6 +47,13 @@ body {
       height: 2.813rem; /* 45px */
     }
     footer {
-      height: 75px;
+      height: 100px;
     }
+    .contactFooter p {
+      font-size: 1rem;
+    }
+    .lienFooter svg{
+      font-size: 1.3rem;
+      color: #ffffff;
+    }  
   }
