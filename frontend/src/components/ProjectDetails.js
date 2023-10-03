@@ -5,7 +5,7 @@ import '../styles/ProjectDetails.css';
 
 const ProjectDetail = ({ project }) => {
   if (!project) {
-    return null; // Si aucun projet n'est sélectionné, n'affiche rien
+    return null;
   }
 
   return (
@@ -18,10 +18,10 @@ const ProjectDetail = ({ project }) => {
         ))}
       </div>
       <div className="liens">
-        <a href={project.repo} target="_blank" rel="noopener noreferrer">
+        <a href={project.repo} target="_blank" rel="noopener noreferrer" aria-label="Lien vers le gitHub du projet.">
           <FontAwesomeIcon icon={faGithub} /> 
         </a>
-        <a href={project.figma} target="_blank" rel="noopener noreferrer">
+        <a href={project.figma} target="_blank" rel="noopener noreferrer" aria-label="Lien vers la maquette figma du projet.">
           <FontAwesomeIcon icon={faFigma} /> 
         </a>
       </div>

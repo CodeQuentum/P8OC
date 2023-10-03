@@ -9,9 +9,9 @@ function Intro() {
   };
 
   return (
-    <div className="intro-container" style={introStyle}>
+    <div className="intro-container" style={introStyle} aria-label="Image de fond : des mains qui code sur un mac">
       <h1 className="typing-effect">Quentin, Développeur Web.</h1>
-      <p>Bienvenue sur mon portfolio</p>
+      <h2>Bienvenue sur mon portfolio</h2>
       <hr className="intro-divider" />
     </div>
   );

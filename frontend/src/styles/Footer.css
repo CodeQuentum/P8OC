@@ -28,7 +28,7 @@ body {
     flex-direction: column;
     justify-content: center;
   }
-  .contactFooter p {
+  .contactFooter h4 {
     font-size: 1.5rem;
   }
   .lienFooter{
@@ -49,7 +49,7 @@ body {
     footer {
       height: 100px;
     }
-    .contactFooter p {
+    .contactFooter h4 {
       font-size: 1rem;
     }
     .lienFooter svg{
