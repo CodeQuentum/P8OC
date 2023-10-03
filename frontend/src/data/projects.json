@@ -32,7 +32,7 @@
 		"id": 4,
 		"title": "Mon vieux grimoire",
 		"cover": "https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1600",
-		"description": "Vous l'aurez compris, j'ai fait une formation chez Openclassrooms. Et voici encore un projet réaliser pendant la formation. Le but de ce projet était de créer un server NodeJS avec express et d'utiliser une base de données mongoDB. Ce projet m'a permis d'apprendre les bases du métier de développer backend même si globalement ma formation était plus orienté sur le front. Grâce à ce projet, j'ai une meilleure compréhension de toutes les étapes de la création d'un site web.",
+		"description": "Vous l'aurez compris, j'ai fait une formation chez Openclassrooms. Et voici encore un projet réalisé pendant la formation. Le but de ce projet était de créer un serveur NodeJS avec express et d'utiliser une base de données mongoDB. Ce projet m'a permis d'apprendre les bases du métier de développeur backend même si globalement ma formation était plus orientée sur le frontend. Grâce à ce projet, j'ai une meilleure compréhension de toutes les étapes de la création d'un site web.",
 		"tags": ["JavaScript", "NodeJS", "Express"],
 		"repo":"https://github.com/CodeQuentum/OCP7",
 	  	"figma": "https://www.figma.com/file/Snidyc45xi6qchoOPabMA9/Maquette-Mon-Vieux-Grimoir?type=design&node-id=0-1&mode=design&t=O9PFUUWoDGP9Lpbv-0"
