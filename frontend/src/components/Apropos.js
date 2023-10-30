@@ -1,9 +1,10 @@
 import React from 'react';
 import '../styles/Apropos.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Apropos(){
     return (
-        <section id='a-propos'>
+        <section id='a-propos' className="container">
         <div className='apropos-container'>
         <div className='introComponent'>
             <h2>A propos</h2>

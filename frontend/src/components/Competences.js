@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import "../styles/Competences.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
@@ -54,7 +53,7 @@ function Competences() {
   const filteredCompetences = competences.filter(competence => competence.categorie === selectedCategory);
 
   return (
-    <section id="mes-competences">
+    <section id="mes-competences"className="container">
       <h2>Mes Compétences</h2>
       <div className="category-buttons">
   <button
