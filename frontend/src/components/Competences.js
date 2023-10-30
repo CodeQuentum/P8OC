@@ -57,19 +57,19 @@ function Competences() {
     <section id="mes-competences">
       <h2>Mes Compétences</h2>
       <div className="category-buttons">
-      <button
-  className={`btn ${selectedCategory === "Hard" ? "btn-primary" : "btn-secondary"}`}
-  onClick={() => filterCompetences("Hard")}
->
-  Hard Skills
-</button>
-<button
-  className={`btn ${selectedCategory === "Soft" ? "btn-primary" : "btn-secondary"}`}
-  onClick={() => filterCompetences("Soft")}
->
-  Soft Skills
-</button>
-      </div>
+  <button
+    className={`btn ${selectedCategory === "Hard" ? "btn-primary" : "btn-secondary"} mr-2`}
+    onClick={() => filterCompetences("Hard")}
+  >
+    Hard Skills
+  </button>
+  <button
+    className={`btn ${selectedCategory === "Soft" ? "btn-primary" : "btn-secondary"}`}
+    onClick={() => filterCompetences("Soft")}
+  >
+    Soft Skills
+  </button>
+</div>
       <div className="competence-list">
         {filteredCompetences.map((competence, index) => (
           <div className="competence-card" key={index}>
