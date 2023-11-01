@@ -60,7 +60,7 @@ function AdminProject() {
 
   return (
     <div>
-      <h1>Liste des Projets</h1>
+      <h1>Liste des Projet</h1>
       <div className="projets">
         {projets.map((projet) => (
           <div key={projet.id} className="projet">

@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 app.use((req, res, next) => {
-  console.log('Requête reçue !');
+  console.log('Requête recue !');
   next();
 });
 
