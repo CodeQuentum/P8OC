@@ -8,7 +8,7 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['a-propos', 'mes-competences', 'mes-projets'];
+      const sections = ['a-propos', 'mes-competences', 'mes-projets', 'contact'];
 
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
@@ -62,6 +62,15 @@ function Header() {
                 className={`headerButton ${activeSection === 'mes-projets' ? 'active-button' : ''}`}
               >
                 Mes projets
+              </button>
+            </ScrollToSection>
+          </li>
+          <li>
+            <ScrollToSection sectionId="contact"> 
+              <button
+                className={`headerButton ${activeSection === 'contact' ? 'active-button' : ''}`}
+              >
+                Contact
               </button>
             </ScrollToSection>
           </li>

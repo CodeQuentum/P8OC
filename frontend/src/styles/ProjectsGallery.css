@@ -51,6 +51,7 @@
 @media (max-width: 768px) {
   .project-gallery {
     height: 100vh; 
+    padding-top: 60px;
   }
   .project-gallery h2 {
     font-size: 2rem;
