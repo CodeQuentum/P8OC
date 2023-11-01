@@ -30,13 +30,14 @@ function Login() {
   };
 
   return (
-    <div className='login-content'>
+    <div className="login-content">
       <h2>LOGIN</h2>
       <form onSubmit={handleSubmit}>
-        <div className='logItem'>
+        <div className="form-group">
           <label htmlFor="email">Email :</label>
           <input
             type="email"
+            className="form-control"
             id="email"
             name="email"
             value={email}
@@ -44,10 +45,11 @@ function Login() {
             required
           />
         </div>
-        <div className='logItem'>
+        <div className="form-group">
           <label htmlFor="password">Mot de passe :</label>
           <input
             type="password"
+            className="form-control" 
             id="password"
             name="password"
             value={password}
@@ -55,7 +57,7 @@ function Login() {
             required
           />
         </div>
-        <button type="submit">Se connecter</button>
+        <button type="submit" className="btn btn-primary">Se connecter</button>
       </form>
     </div>
   );
