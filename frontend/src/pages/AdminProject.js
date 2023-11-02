@@ -8,10 +8,10 @@ function AdminProject() {
   const [editedProject, setEditedProject] = useState({
     id: null,
     title: '',
-    cover: null,
-    pictures: [],
     description: '',
     tags: '',
+    repo: '',
+    figma: '',
   });
 
   useEffect(() => {
@@ -32,27 +32,26 @@ function AdminProject() {
       await axios.put(`http://localhost:4000/api/projects/${editedProject.id}`, editedProject);
       setProjets((prevProjects) =>
         prevProjects.map((projet) =>
-          projet.id === editedProject.id ? { ...projet, title: editedProject.title } : projet
+          projet._id === editedProject.id ? { ...projet, title: editedProject.title } : projet
         )
       );
 
       setEditedProject({
         id: null,
         title: '',
-        cover: null,
-        pictures: [],
         description: '',
         tags: '',
+        repo: '',
+        figma: '',
       });
     } catch (error) {
       console.error('Erreur lors de la mise à jour du projet :', error);
     }
   };
-
   const handleDeleteProjet = async (id) => {
     try {
       await axios.delete(`http://localhost:4000/api/projects/${id}`);
-      setProjets((prevProjects) => prevProjects.filter((projet) => projet.id !== id));
+      setProjets((prevProjects) => prevProjects.filter((projet) => projet._id !== id));
     } catch (error) {
       console.error('Erreur lors de la suppression du projet :', error);
     }
@@ -60,17 +59,16 @@ function AdminProject() {
 
   return (
     <div>
-      <h1>Liste des Projet</h1>
+      <h1>Liste des Projets</h1>
       <div className="projets">
         {projets.map((projet) => (
-          <div key={projet.id} className="projet">
+          <div key={projet._id} className="projet">
             <h3>{projet.title}</h3>
-            <Link to={`/edit/${projet.id}`}>Modifier</Link>
-            <button onClick={() => handleDeleteProjet(projet.id)}>Supprimer</button>
+            <Link to={`/edit/${projet._id}`}>Modifier</Link>
+            <button onClick={() => handleDeleteProjet(projet._id)}>Supprimer</button>
           </div>
         ))}
       </div>
-      <h2>Ajouter un projet</h2>
       <AddProject />
       {editedProject.id !== null && (
         <div>
@@ -79,7 +77,9 @@ function AdminProject() {
             type="text"
             placeholder="Nouveau titre"
             value={editedProject.title}
-            onChange={(e) => setEditedProject({ ...editedProject, title: e.target.value })}
+            onChange={(e) => {
+              setEditedProject({ ...editedProject, title: e.target.value });
+            }}
           />
           <button onClick={handleEditProjet}>Enregistrer les modifications</button>
         </div>

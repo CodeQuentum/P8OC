@@ -8,10 +8,10 @@ function EditProject() {
   const [project, setProject] = useState(null);
   const [formData, setFormData] = useState({
     title: '',
-    cover: null,
-    pictures: [],
     description: '',
     tags: [],
+    repo:'',
+    figma:'',
   });
 
   useEffect(() => {
@@ -25,10 +25,10 @@ function EditProject() {
           setProject(selectedProject);
           setFormData({
             title: selectedProject.title,
-            cover: null,
-            pictures: [],
             description: selectedProject.description,
             tags: selectedProject.tags.join(', '),
+            repo: selectedProject.repo,
+            figma: selectedProject.figma,
           });
         } else {
           console.log('Projet non trouvé pour ID :', projectId);
@@ -87,15 +87,6 @@ function EditProject() {
           />
         </div>
         <div>
-          <label htmlFor="cover">Image de couverture</label>
-          <input
-            type="file"
-            id="cover"
-            name="cover"
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
           <label htmlFor="description">Description</label>
           <textarea
             id="description"
@@ -115,15 +106,26 @@ function EditProject() {
           />
         </div>
         <div>
-          <label htmlFor="pictures">Images du projet</label>
+          <label htmlFor="repo">Url repo git</label>
           <input
-            type="file"
-            id="pictures"
-            name="pictures"
-            multiple
+            type="text"
+            id="repo"
+            name="repo"
+            value={formData.repo}
             onChange={handleInputChange}
           />
         </div>
+        <div>
+          <label htmlFor="figma">Url maquette figma</label>
+          <input
+            type="text"
+            id="figma"
+            name="figma"
+            value={formData.figma}
+            onChange={handleInputChange}
+          />
+        </div>
+
         <button type="submit">Enregistrer les modifications</button>
       </form>
     </div>

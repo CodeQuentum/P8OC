@@ -22,6 +22,6 @@ app.use((req, res, next) => {
 
 app.use(express.json())
 
-app.use('/api/project', projectRoutes);
+app.use('/api/projects', projectRoutes);
 
 module.exports = app;
