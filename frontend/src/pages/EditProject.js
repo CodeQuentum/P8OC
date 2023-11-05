@@ -1,27 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import NotFound from './NotFound';
+import ReturnButton from '../components/returnButton';
 
 function EditProject() {
-  const { projectId } = useParams();
+  const pathname = window.location.pathname;
+  const projectId = pathname.substring(pathname.lastIndexOf('/') + 1);
+
+  console.log('ID du projet (extrait de l\'URL) :', projectId);
+
   const [project, setProject] = useState(null);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
-    tags: [],
-    repo:'',
-    figma:'',
+    tags: '',
+    repo: '',
+    figma: '',
   });
 
   useEffect(() => {
     async function fetchProjectData() {
       try {
+        console.log('Fetching project data for projectId:', projectId);
+
         const response = await axios.get(`http://localhost:4000/api/projects/${projectId}`);
+        console.log('Response data:', response.data);
+
         const selectedProject = response.data;
 
         if (selectedProject) {
-          console.log('Projet sélectionné :', selectedProject);
+          console.log('Selected project:', selectedProject);
           setProject(selectedProject);
           setFormData({
             title: selectedProject.title,
@@ -31,38 +39,33 @@ function EditProject() {
             figma: selectedProject.figma,
           });
         } else {
-          console.log('Projet non trouvé pour ID :', projectId);
+          console.log('Project not found for ID:', projectId);
         }
       } catch (error) {
-        console.error('Erreur lors de la récupération du projet :', error);
+        console.error('Error fetching project data:', error);
       }
     }
     fetchProjectData();
   }, [projectId]);
 
   const handleInputChange = (e) => {
-    const { name, value, type, files } = e.target;
-    if (type === 'file') {
-      setFormData({
-        ...formData,
-        [name]: files[0],
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    }
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log('Updating project with ID:', projectId);
       await axios.put(`http://localhost:4000/api/projects/${projectId}`, formData);
+      console.log('Project updated successfully!');
     } catch (error) {
-      console.error('Erreur lors de la mise à jour du projet :', error);
+      console.error('Error updating the project:', error);
     }
-  };
+  }
 
   if (!project) {
     return (
@@ -106,7 +109,7 @@ function EditProject() {
           />
         </div>
         <div>
-          <label htmlFor="repo">Url repo git</label>
+          <label htmlFor="repo">URL repo git</label>
           <input
             type="text"
             id="repo"
@@ -116,7 +119,7 @@ function EditProject() {
           />
         </div>
         <div>
-          <label htmlFor="figma">Url maquette figma</label>
+          <label htmlFor="figma">URL maquette Figma</label>
           <input
             type="text"
             id="figma"
@@ -128,6 +131,7 @@ function EditProject() {
 
         <button type="submit">Enregistrer les modifications</button>
       </form>
+      < ReturnButton />
     </div>
   );
 }
