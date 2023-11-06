@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
-import axios from 'axios'; 
+import axios from 'axios';
 
 function AddProject() {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
-    tags: '',
-    repo:'',
-    figma:'',
+    tags: [], // Initialisez les tags en tant que tableau vide
+    repo: '',
+    figma: '',
   });
 
   const handleInputChange = (e) => {
-    const { name, value, type, files } = e.target;
-    if (type === 'file') {
+    const { name, value } = e.target;
+
+    if (name === 'tags') {
+      const tagsArray = value.split(',').map((tag) => tag.trim());
       setFormData({
         ...formData,
-        [name]: files[0],
+        [name]: tagsArray,
       });
     } else {
       setFormData({
@@ -31,19 +33,17 @@ function AddProject() {
     const formDataToSend = new FormData();
     formDataToSend.append('title', formData.title);
     formDataToSend.append('description', formData.description);
-    formDataToSend.append('tags', formData.tags);
+    formDataToSend.append('tags', JSON.stringify(formData.tags)); // Assurez-vous que les tags sont un tableau
     formDataToSend.append('repo', formData.repo);
     formDataToSend.append('figma', formData.figma);
-
 
     try {
       const response = await axios.post('http://localhost:4000/api/projects', formDataToSend, {
         headers: {
-          'Content-Type': 'application/json', 
+          'Content-Type': 'application/json',
         },
       });
       console.log('Réponse du serveur :', response.data);
-
     } catch (error) {
       console.error('Erreur lors de la soumission du projet :', error);
     }
@@ -78,7 +78,7 @@ function AddProject() {
             type="text"
             id="tags"
             name="tags"
-            value={formData.tags}
+            value={formData.tags.join(', ')} // Affichez les tags sous forme de chaîne
             onChange={handleInputChange}
           />
         </div>

@@ -13,7 +13,7 @@ function EditProject() {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
-    tags: '',
+    tags: [],
     repo: '',
     figma: '',
   });
@@ -34,7 +34,7 @@ function EditProject() {
           setFormData({
             title: selectedProject.title,
             description: selectedProject.description,
-            tags: selectedProject.tags.join(', '),
+            tags: selectedProject.tags, // Les tags sont désormais stockés en tant que tableau
             repo: selectedProject.repo,
             figma: selectedProject.figma,
           });
@@ -52,7 +52,7 @@ function EditProject() {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: name === "tags" ? value.split(',').map(tag => tag.trim()) : value,
     });
   };
 
@@ -104,7 +104,7 @@ function EditProject() {
             type="text"
             id="tags"
             name="tags"
-            value={formData.tags}
+            value={formData.tags.join(', ')} // Afficher les tags en tant que chaîne
             onChange={handleInputChange}
           />
         </div>
@@ -131,7 +131,7 @@ function EditProject() {
 
         <button type="submit">Enregistrer les modifications</button>
       </form>
-      < ReturnButton />
+      <ReturnButton />
     </div>
   );
 }

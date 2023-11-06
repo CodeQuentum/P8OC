@@ -1,7 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faFigma } from '@fortawesome/free-brands-svg-icons';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/ProjectDetails.css';
 
 const ProjectDetail = ({ project }) => {
@@ -16,7 +15,7 @@ const ProjectDetail = ({ project }) => {
         <p className="lead">{project.description}</p>
         <div className="tags">
           {project.tags.map((tag, tagIndex) => (
-            <span key={tagIndex} className="badge badge-secondary mr-2">{tag}</span>
+            <span key={tagIndex} className="tag">{tag}</span>
           ))}
         </div>
         <div className="liens">
