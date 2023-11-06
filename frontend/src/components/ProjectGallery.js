@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/ProjectsGallery.css';
 import ProjectDetail from './ProjectDetails';
 import axios from 'axios';
@@ -9,7 +8,7 @@ function ProjectGallery() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/api/projects') 
+    axios.get('http://localhost:4000/api/projects')
       .then((response) => {
         const data = response.data;
         setProjects(data);
@@ -23,7 +22,11 @@ function ProjectGallery() {
   }, []);
 
   const handleProjectClick = (project) => {
-    setSelectedProject(project);
+    if (selectedProject && selectedProject._id === project._id) {
+      // Le projet est déjà sélectionné.
+    } else {
+      setSelectedProject(project);
+    }
   };
 
   return (
@@ -34,9 +37,9 @@ function ProjectGallery() {
           <div className="project-buttons">
             {projects.map((project) => (
               <button
-                key={project.id}
+                key={project._id}
                 onClick={() => handleProjectClick(project)}
-                className={`btn btn-outline-primary ${selectedProject && selectedProject.id === project.id ? 'active' : ''}`}
+                className={selectedProject && selectedProject._id === project._id ? 'active' : ''}
               >
                 {project.title}
               </button>
