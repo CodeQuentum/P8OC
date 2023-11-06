@@ -34,7 +34,7 @@ function EditProject() {
           setFormData({
             title: selectedProject.title,
             description: selectedProject.description,
-            tags: selectedProject.tags, // Les tags sont désormais stockés en tant que tableau
+            tags: selectedProject.tags,
             repo: selectedProject.repo,
             figma: selectedProject.figma,
           });
@@ -104,7 +104,7 @@ function EditProject() {
             type="text"
             id="tags"
             name="tags"
-            value={formData.tags.join(', ')} // Afficher les tags en tant que chaîne
+            value={formData.tags.join(', ')}
             onChange={handleInputChange}
           />
         </div>

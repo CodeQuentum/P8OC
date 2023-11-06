@@ -5,7 +5,7 @@ function AddProject() {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
-    tags: [], // Initialisez les tags en tant que tableau vide
+    tags: [],
     repo: '',
     figma: '',
   });
@@ -33,7 +33,7 @@ function AddProject() {
     const formDataToSend = new FormData();
     formDataToSend.append('title', formData.title);
     formDataToSend.append('description', formData.description);
-    formDataToSend.append('tags', JSON.stringify(formData.tags)); // Assurez-vous que les tags sont un tableau
+    formDataToSend.append('tags', JSON.stringify(formData.tags));
     formDataToSend.append('repo', formData.repo);
     formDataToSend.append('figma', formData.figma);
 
@@ -78,7 +78,7 @@ function AddProject() {
             type="text"
             id="tags"
             name="tags"
-            value={formData.tags.join(', ')} // Affichez les tags sous forme de chaîne
+            value={formData.tags.join(', ')}
             onChange={handleInputChange}
           />
         </div>
