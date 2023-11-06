@@ -21,9 +21,8 @@ function Login() {
         email,
         password,
       });
-
       console.log('Réponse du serveur :', response.data);
-
+      window.location.href = '/admin';
     } catch (error) {
       console.error('Erreur lors de la connexion :', error);
     }
@@ -49,7 +48,7 @@ function Login() {
           <label htmlFor="password">Mot de passe :</label>
           <input
             type="password"
-            className="form-control" 
+            className="form-control"
             id="password"
             name="password"
             value={password}
@@ -57,7 +56,9 @@ function Login() {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary">Se connecter</button>
+        <button type="submit" className="btn btn-primary">
+          Se connecter
+        </button>
       </form>
     </div>
   );
