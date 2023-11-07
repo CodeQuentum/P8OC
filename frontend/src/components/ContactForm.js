@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../styles/ContactForm.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,12 +18,16 @@ function ContactForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // ajouter ici la logique pour envoyer les données du formulaire
-    console.log(formData);
+    try {
+      const response = await axios.post('http://localhost:4000/api/mail/send-email', formData);
+      console.log('Réponse du serveur :', response.data);
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi des données :', error);
+    }
   };
-
+  
   return (
     <section id='contact'>
       <div className="container">

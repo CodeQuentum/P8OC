@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const projectRoutes = require('./routes/projets');
 const userRoutes = require('./routes/user');
+const mailRoutes = require('./routes/mail');
 require('dotenv').config();
 
 const app = express();
@@ -25,5 +26,6 @@ app.use(express.json())
 
 app.use('/api/projects', projectRoutes);
 app.use('/api/auth', userRoutes);
+app.use('/api/mail', mailRoutes);
 
 module.exports = app;
