@@ -9,6 +9,7 @@ function ContactForm() {
     email: '',
     message: '',
   });
+  const [messageSent, setMessageSent] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,11 +24,17 @@ function ContactForm() {
     try {
       const response = await axios.post('http://localhost:4000/api/mail/send-email', formData);
       console.log('Réponse du serveur :', response.data);
+      setMessageSent(true);
+      setFormData({ 
+        name: '',
+        email: '',
+        message: '',
+      });
     } catch (error) {
       console.error('Erreur lors de l\'envoi des données :', error);
     }
   };
-  
+
   return (
     <section id='contact'>
       <div className="container">
@@ -76,6 +83,7 @@ function ContactForm() {
             </div>
             <button type="submit" className="btn btn-primary">Envoyer</button>
           </form>
+          {messageSent && <p>Message envoyé</p>}
         </div>
       </div>
     </section>
