@@ -15,9 +15,15 @@ function AdminProject() {
   });
 
   useEffect(() => {
+    const token = localStorage.getItem('token');
+
     async function fetchProjects() {
       try {
-        const response = await axios.get('http://localhost:4000/api/projects');
+        const response = await axios.get('http://localhost:4000/api/projects', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
         setProjets(response.data);
       } catch (error) {
         console.error('Erreur lors de la récupération des projets :', error);
@@ -28,8 +34,14 @@ function AdminProject() {
   }, []);
 
   const handleEditProjet = async () => {
+    const token = localStorage.getItem('jwtToken');
+
     try {
-      await axios.put(`http://localhost:4000/api/projects/${editedProject.id}`, editedProject);
+      await axios.put(`http://localhost:4000/api/projects/${editedProject.id}`, editedProject, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
       setProjets((prevProjects) =>
         prevProjects.map((projet) =>
           projet._id === editedProject.id ? { ...projet, title: editedProject.title } : projet
@@ -48,9 +60,16 @@ function AdminProject() {
       console.error('Erreur lors de la mise à jour du projet :', error);
     }
   };
+
   const handleDeleteProjet = async (id) => {
+    const token = localStorage.getItem('token');
+
     try {
-      await axios.delete(`http://localhost:4000/api/projects/${id}`);
+      await axios.delete(`http://localhost:4000/api/projects/${id}`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
       setProjets((prevProjects) => prevProjects.filter((projet) => projet._id !== id));
     } catch (error) {
       console.error('Erreur lors de la suppression du projet :', error);

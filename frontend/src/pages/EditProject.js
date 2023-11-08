@@ -59,9 +59,7 @@ function EditProject() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('Updating project with ID:', projectId);
       await axios.put(`http://localhost:4000/api/projects/${projectId}`, formData);
-      console.log('Project updated successfully!');
     } catch (error) {
       console.error('Error updating the project:', error);
     }

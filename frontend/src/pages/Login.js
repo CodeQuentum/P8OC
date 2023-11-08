@@ -21,7 +21,9 @@ function Login() {
         email,
         password,
       });
-      console.log('Réponse du serveur :', response.data);
+      const { token } = response.data;
+      localStorage.setItem('token', token);
+
       window.location.href = '/admin';
     } catch (error) {
       console.error('Erreur lors de la connexion :', error);

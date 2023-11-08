@@ -1,4 +1,3 @@
-const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 dotenv.config();
 const sgMail = require ('@sendgrid/mail');
@@ -19,7 +18,6 @@ exports.envoyerCourriel = (req, res) => {
 
   sgMail.send(msg)
     .then(() => {
-      console.log('E-mail envoyé avec succès.');
       res.status(200).send('E-mail envoyé avec succès.');
     })
     .catch((error) => {
