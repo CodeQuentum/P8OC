@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import ReturnButton from '../components/returnButton';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -61,6 +62,7 @@ function Login() {
         <button type="submit" className="btn btn-primary">
           Se connecter
         </button>
+        <ReturnButton />
       </form>
     </div>
   );

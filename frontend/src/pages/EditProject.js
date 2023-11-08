@@ -21,15 +21,10 @@ function EditProject() {
   useEffect(() => {
     async function fetchProjectData() {
       try {
-        console.log('Fetching project data for projectId:', projectId);
-
         const response = await axios.get(`http://localhost:4000/api/projects/${projectId}`);
-        console.log('Response data:', response.data);
-
         const selectedProject = response.data;
 
         if (selectedProject) {
-          console.log('Selected project:', selectedProject);
           setProject(selectedProject);
           setFormData({
             title: selectedProject.title,
@@ -38,9 +33,7 @@ function EditProject() {
             repo: selectedProject.repo,
             figma: selectedProject.figma,
           });
-        } else {
-          console.log('Project not found for ID:', projectId);
-        }
+        } 
       } catch (error) {
         console.error('Error fetching project data:', error);
       }

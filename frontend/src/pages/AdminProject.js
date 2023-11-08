@@ -34,7 +34,7 @@ function AdminProject() {
   }, []);
 
   const handleEditProjet = async () => {
-    const token = localStorage.getItem('jwtToken');
+    const token = localStorage.getItem('token');
 
     try {
       await axios.put(`http://localhost:4000/api/projects/${editedProject.id}`, editedProject, {
@@ -76,9 +76,16 @@ function AdminProject() {
     }
   };
 
+  const handleLogout = () => {
+    
+    localStorage.removeItem('token');
+    window.location.href = '/login';
+  };
+
   return (
     <div>
       <h1>Liste des Projets</h1>
+      <button onClick={handleLogout}>Déconnexion</button>
       <div className="projets">
         {projets.map((projet) => (
           <div key={projet._id} className="projet">
